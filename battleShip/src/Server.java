@@ -66,7 +66,6 @@ public class Server extends JFrame
             try 
             {
                waitForConnection(); // wait for a connection
-               System.out.println("TEST!@#");
                getStreams(); // get input & output streams
                processConnection(); // process connection
             } // end try

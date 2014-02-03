@@ -17,26 +17,26 @@ public class StartingClass extends JFrame {
 	}
 
 	private void initUI() {
-		JPanel panel = new JPanel();
-		getContentPane().add(panel);
-		panel.setLayout(null);
-		setSize(1080, 800);
-		setTitle("Battleship Test");
+		//JPanel panel = new JPanel();
+		//getContentPane().add(panel);
+		//panel.setLayout(null);
+		//setSize(1080, 800);
+		//setTitle("Battleship Test");
 		//setLocationRelativeTo(null);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(EXIT_ON_CLOSE);
 		// Add background
-		setLayout(new BorderLayout());
-		JLabel background = new JLabel(new ImageIcon("src/img/test.png"));
-		add(background);
-		background.setLayout(new FlowLayout());
+		//setLayout(new BorderLayout());
+		//JLabel background = new JLabel(new ImageIcon("src/img/test.png"));
+		//add(background);
+		//background.setLayout(new FlowLayout());
 		
-		JButton serverButton = new JButton("Server");
-		JButton clientButton = new JButton("Client");
+		//JButton serverButton = new JButton("Server");
+		//JButton clientButton = new JButton("Client");
 		
-		background.add(clientButton);
-		background.add(serverButton);
+		//background.add(clientButton);
+		//background.add(serverButton);
 
-		clientButton.addActionListener(new ActionListener() {
+		/*clientButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				runClient();
 			}
@@ -46,10 +46,10 @@ public class StartingClass extends JFrame {
 			public void actionPerformed(ActionEvent event) {
 				runServer();
 			}
-		});
+		});*/
 	}
 
-	private void runClient() {
+	private static void runClient() {
 
 		Client application = new Client("127.0.0.1"); // connect to localhost
 		// application = new Client( "69.2.168.217" ); // connect to
@@ -61,19 +61,22 @@ public class StartingClass extends JFrame {
 		application.runClient(); // run client application
 	}
 
-	private void runServer() {
+	private static void runServer() {
 		Server application = new Server(); // create server
 		application.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		application.runServer();// run server application
 	}
 
 	public static void main(String args[]) {
-		SwingUtilities.invokeLater(new Runnable() {
+		/*SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				StartingClass ex = new StartingClass();
 				ex.setVisible(true);
 			}
-		});
+		});*/
+		
+		//runClient();
+		runServer();
 
 	}
 
