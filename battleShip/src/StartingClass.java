@@ -22,8 +22,8 @@ public class StartingClass extends JFrame {
 		panel.setLayout(null);
 		setSize(1080, 800);
 		setTitle("Battleship Test");
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		//setLocationRelativeTo(null);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		// Add background
 		setLayout(new BorderLayout());
 		JLabel background = new JLabel(new ImageIcon("src/img/test.png"));
@@ -33,7 +33,7 @@ public class StartingClass extends JFrame {
 		JButton serverButton = new JButton("Server");
 		JButton clientButton = new JButton("Client");
 		
-		//background.add(clientButton);
+		background.add(clientButton);
 		background.add(serverButton);
 
 		clientButton.addActionListener(new ActionListener() {
@@ -57,13 +57,13 @@ public class StartingClass extends JFrame {
 		// else
 		// application = new Client(args[0]); // use args to connect
 
-		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		application.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		application.runClient(); // run client application
 	}
 
 	private void runServer() {
 		Server application = new Server(); // create server
-		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		application.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		application.runServer();// run server application
 	}
 

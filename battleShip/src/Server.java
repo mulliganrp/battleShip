@@ -31,7 +31,7 @@ public class Server extends JFrame
    public Server()
    {
       super( "Server" );
-
+      
       enterField = new JTextField(); // create enterField
       enterField.setEditable( false );
       enterField.addActionListener(
@@ -45,29 +45,28 @@ public class Server extends JFrame
             } // end method actionPerformed
          } // end anonymous inner class
       ); // end call to addActionListener
-
       add( enterField, BorderLayout.NORTH );
 
-     // displayArea = new JTextArea(); // create displayArea
-      //add( new JScrollPane( displayArea ), BorderLayout.CENTER );
+      displayArea = new JTextArea(); // create displayArea
+      add( new JScrollPane( displayArea ), BorderLayout.CENTER );
 
       setSize( 300, 150 ); // set size of window
       setVisible( true ); // show window
    } // end Server constructor
 
    // set up and run server 
-   public void runServer()
-   {
+   public void runServer()  {
       try // set up server to receive connections; process connections
       {
+    	  
          server = new ServerSocket( 12345, 100 ); // create ServerSocket
-
+         
          while ( true ) 
          {
             try 
             {
-            	
                waitForConnection(); // wait for a connection
+               System.out.println("TEST!@#");
                getStreams(); // get input & output streams
                processConnection(); // process connection
             } // end try
@@ -94,7 +93,7 @@ public class Server extends JFrame
       displayMessage( "Waiting for connection\n" );
       
       connection = server.accept(); // allow server to accept connection   
-      System.out.println("TEST!@#");
+      
       displayMessage( "Connection " + counter + " received from: " +
          connection.getInetAddress().getHostName() );
    } // end method waitForConnection
