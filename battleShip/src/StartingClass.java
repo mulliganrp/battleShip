@@ -51,7 +51,8 @@ public class StartingClass extends JFrame {
 
 	private static void runClient() {
 
-		Client application = new Client("127.0.0.1"); // connect to localhost
+		//Client application = new Client("127.0.0.1"); // connect to localhost
+		Client application = new Client("131.118.192.168"); // connect to localhost
 		// application = new Client( "69.2.168.217" ); // connect to
 		// localhost
 		// else
