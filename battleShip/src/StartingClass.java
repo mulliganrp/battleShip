@@ -17,10 +17,10 @@ public class StartingClass extends JFrame {
 	}
 
 	private void initUI() {
-		//JPanel panel = new JPanel();
-		//getContentPane().add(panel);
-		//panel.setLayout(null);
-		//setSize(1080, 800);
+		JPanel panel = new JPanel();
+		getContentPane().add(panel);
+		panel.setLayout(null);
+		setSize(1080, 800);
 		//setTitle("Battleship Test");
 		//setLocationRelativeTo(null);
 		//setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -30,7 +30,7 @@ public class StartingClass extends JFrame {
 		//add(background);
 		//background.setLayout(new FlowLayout());
 		
-		//JButton serverButton = new JButton("Server");
+		JButton serverButton = new JButton("Server");
 		//JButton clientButton = new JButton("Client");
 		
 		//background.add(clientButton);
@@ -41,18 +41,18 @@ public class StartingClass extends JFrame {
 				runClient();
 			}
 		});
-
+*/
 		serverButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				runServer();
 			}
-		});*/
+		});
 	}
 
 	private static void runClient() {
 
-		Client application = new Client("127.0.0.1"); // connect to localhost
-		// application = new Client( "69.2.168.217" ); // connect to
+		//Client application = new Client("127.0.0.1"); // connect to localhost
+		Client application = new Client("131.118.193.218"); // connect to localhost
 		// localhost
 		// else
 		// application = new Client(args[0]); // use args to connect
@@ -68,15 +68,15 @@ public class StartingClass extends JFrame {
 	}
 
 	public static void main(String args[]) {
-		/*SwingUtilities.invokeLater(new Runnable() {
+		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				StartingClass ex = new StartingClass();
 				ex.setVisible(true);
 			}
-		});*/
+		});
 		
-		//runClient();
-		runServer();
+		runClient();
+		//runServer();
 
 	}
 
